@@ -1,6 +1,6 @@
 import { EuiComboBox } from "@elastic/eui";
 import { EuiComboBoxOptionOption } from "@elastic/eui/src/components/combo_box/types";
-import { ReactElement, useState } from "react";
+import { ReactElement, useMemo, useState } from "react";
 import { useQuery } from "react-query";
 import { getCountries } from "./apis";
 import { Country } from "./types";
@@ -22,11 +22,15 @@ function CountryInput(props: CountryInputProps): ReactElement {
     selectedOptions.length > 0 && props.onChange(selectedOptions[0].value as Country);
   };
 
-  const options = data?.map((country) => ({
-    label: country.Country,
-    key: country.ISO2,
-    value: country,
-  }));
+  const options = useMemo(
+    () =>
+      data?.map((country) => ({
+        label: country.Country,
+        key: country.ISO2,
+        value: country,
+      })),
+    [data],
+  );
   return (
     <EuiComboBox
       placeholder="Select a country"
@@ -35,6 +39,7 @@ function CountryInput(props: CountryInputProps): ReactElement {
       singleSelection={{ asPlainText: true }}
       isLoading={isLoading}
       onChange={onChange}
+      fullWidth
     />
   );
 }

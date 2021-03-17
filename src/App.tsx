@@ -28,12 +28,7 @@ function App(): ReactElement {
             paddingSize="l"
           />
           <EuiPageContent borderRadius="none" hasShadow={false} style={{ display: "flex" }}>
-            <EuiPageContent
-              verticalPosition="center"
-              horizontalPosition="center"
-              paddingSize="none"
-              hasShadow={false}
-            >
+            <EuiPageContent verticalPosition="center" horizontalPosition="center" paddingSize="none" hasShadow={false}>
               <EuiPageContentBody restrictWidth>
                 <SearchQueryBar onCountryChange={handleCountryChange} onDateRangeChange={handleDateRangeChange} />
                 <EuiSpacer />

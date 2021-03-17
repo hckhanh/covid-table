@@ -11,7 +11,7 @@ const caseColumns: EuiTableFieldDataColumnType<CaseRecord>[] = [
   { field: "Confirmed", name: "Confirmed", dataType: "auto", sortable: true },
   { field: "Deaths", name: "Deaths", sortable: true },
   { field: "Recovered", name: "Recovered", sortable: true },
-  { field: "Date", name: "Date", sortable: true, render: date => moment(date).format()},
+  { field: "Date", name: "Date", sortable: true, render: (date) => moment(date).format() },
 ];
 
 type CasesTableProps = {
@@ -27,7 +27,7 @@ function CasesTable(props: CasesTableProps): ReactElement {
       keepPreviousData: true,
     },
   );
-  return <EuiInMemoryTable items={data || emptyArray} columns={caseColumns} loading={isFetching} sorting />;
+  return <EuiInMemoryTable items={data || emptyArray} columns={caseColumns} loading={isFetching} sorting pagination />;
 }
 
 export default CasesTable;
