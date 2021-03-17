@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { EuiPage, EuiPageBody, EuiPageContent, EuiPageHeader } from "@elastic/eui";
+import { Moment } from "moment";
+import React, { ReactElement, useState } from "react";
+import CasesTable from "./CasesTable";
+import SearchQueryBar from "./SearchQueryBar";
+import { Country, SearchQuery } from "./types";
 
-function App() {
+function App(): ReactElement {
+  const [searchQuery, setSearchQuery] = useState<Partial<SearchQuery>>();
+
+  const handleCountryChange = (country: Country) => {
+    setSearchQuery((searchQuery) => ({ ...searchQuery, country }));
+  };
+
+  const handleDateRangeChange = (startDate: Moment, endDate: Moment) => {
+    setSearchQuery((searchQuery) => ({ ...searchQuery, startDate, endDate }));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <EuiPage paddingSize="none">
+        <EuiPageBody>
+          <EuiPageHeader
+            restrictWidth
+            iconType="starFilled"
+            pageTitle="Covid Table"
+            // rightSideItems={[button]}
+            paddingSize="l"
+          />
+          <EuiPageContent borderRadius="none" hasShadow={false} style={{ display: "flex" }}>
+            <EuiPageContent
+              verticalPosition="center"
+              horizontalPosition="center"
+              paddingSize="none"
+              color="subdued"
+              hasShadow={false}
+            >
+              <SearchQueryBar onCountryChange={handleCountryChange} onDateRangeChange={handleDateRangeChange} />
+              <CasesTable searchQuery={searchQuery} />
+            </EuiPageContent>
+          </EuiPageContent>
+        </EuiPageBody>
+      </EuiPage>
     </div>
   );
 }
