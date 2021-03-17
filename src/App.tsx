@@ -1,4 +1,4 @@
-import { EuiPage, EuiPageBody, EuiPageContent, EuiPageHeader } from "@elastic/eui";
+import { EuiPage, EuiPageBody, EuiPageContent, EuiPageContentBody, EuiPageHeader, EuiSpacer } from "@elastic/eui";
 import { Moment } from "moment";
 import React, { ReactElement, useState } from "react";
 import CasesTable from "./CasesTable";
@@ -22,7 +22,7 @@ function App(): ReactElement {
         <EuiPageBody>
           <EuiPageHeader
             restrictWidth
-            iconType="starFilled"
+            iconType="searchProfilerApp"
             pageTitle="Covid Table"
             // rightSideItems={[button]}
             paddingSize="l"
@@ -32,11 +32,13 @@ function App(): ReactElement {
               verticalPosition="center"
               horizontalPosition="center"
               paddingSize="none"
-              color="subdued"
               hasShadow={false}
             >
-              <SearchQueryBar onCountryChange={handleCountryChange} onDateRangeChange={handleDateRangeChange} />
-              <CasesTable searchQuery={searchQuery} />
+              <EuiPageContentBody restrictWidth>
+                <SearchQueryBar onCountryChange={handleCountryChange} onDateRangeChange={handleDateRangeChange} />
+                <EuiSpacer />
+                <CasesTable searchQuery={searchQuery} />
+              </EuiPageContentBody>
             </EuiPageContent>
           </EuiPageContent>
         </EuiPageBody>

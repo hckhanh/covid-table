@@ -25,6 +25,7 @@ function DateFilterInput(props: DateFilterInputProps): ReactElement {
           startDate={startDate}
           endDate={endDate}
           maxDate={endDate || undefined}
+          placeholder="Start Date"
           showTimeSelect
         />
       }
@@ -35,9 +36,11 @@ function DateFilterInput(props: DateFilterInputProps): ReactElement {
           startDate={startDate}
           endDate={endDate}
           minDate={startDate || undefined}
+          placeholder="End Date"
           showTimeSelect
         />
       }
+      fullWidth
     />
   );
 }

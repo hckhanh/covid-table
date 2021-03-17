@@ -1,5 +1,6 @@
 import { EuiInMemoryTable } from "@elastic/eui";
 import { EuiTableFieldDataColumnType } from "@elastic/eui/src/components/basic_table/table_types";
+import moment from "moment";
 import { ReactElement } from "react";
 import { useQuery } from "react-query";
 import { getTotalByCountry } from "./apis";
@@ -10,7 +11,7 @@ const caseColumns: EuiTableFieldDataColumnType<CaseRecord>[] = [
   { field: "Confirmed", name: "Confirmed", dataType: "auto", sortable: true },
   { field: "Deaths", name: "Deaths", sortable: true },
   { field: "Recovered", name: "Recovered", sortable: true },
-  { field: "Date", name: "Date", sortable: true },
+  { field: "Date", name: "Date", sortable: true, render: date => moment(date).format()},
 ];
 
 type CasesTableProps = {
