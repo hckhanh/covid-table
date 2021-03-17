@@ -2,9 +2,9 @@ import { EuiInMemoryTable, formatDate } from "@elastic/eui";
 import { EuiTableFieldDataColumnType } from "@elastic/eui/src/components/basic_table/table_types";
 import { ReactElement } from "react";
 import { useQuery } from "react-query";
-import { getTotalByCountry } from "./apis";
-import { CaseRecord, SearchQuery } from "./types";
-import { emptyArray } from "./utils";
+import { getTotalByCountry } from "../apis";
+import { CaseRecord, SearchQuery } from "../types";
+import { emptyArray } from "../utils";
 
 const caseColumns: EuiTableFieldDataColumnType<CaseRecord>[] = [
   { field: "Confirmed", name: "Confirmed", dataType: "auto", sortable: true },

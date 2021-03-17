@@ -2,8 +2,8 @@ import { EuiComboBox } from "@elastic/eui";
 import { EuiComboBoxOptionOption } from "@elastic/eui/src/components/combo_box/types";
 import { ReactElement, useMemo, useState } from "react";
 import { useQuery } from "react-query";
-import { getCountries } from "./apis";
-import { Country } from "./types";
+import { getCountries } from "../apis";
+import { Country } from "../types";
 
 export type CountryInputProps = {
   onChange: (country: Country) => void;

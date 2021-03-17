@@ -1,9 +1,9 @@
 import { EuiPage, EuiPageBody, EuiPageContent, EuiPageContentBody, EuiPageHeader, EuiSpacer } from "@elastic/eui";
 import { Moment } from "moment";
 import React, { ReactElement, useState } from "react";
+import { Country, SearchQuery } from "../types";
 import CasesTable from "./CasesTable";
 import SearchQueryBar from "./SearchQueryBar";
-import { Country, SearchQuery } from "./types";
 
 function App(): ReactElement {
   const [searchQuery, setSearchQuery] = useState<Partial<SearchQuery>>();
