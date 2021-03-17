@@ -1,20 +1,22 @@
 import { EuiDatePicker, EuiDatePickerRange } from "@elastic/eui";
-import { Moment } from "moment";
-import { ReactElement, useState } from "react";
+import moment, { Moment } from "moment";
+import { ReactElement, useEffect, useState } from "react";
 
 export type DateFilterInputProps = {
   onChange: (startDate: Moment, endDate: Moment) => void;
 };
 
+const today = moment();
+
 function DateFilterInput(props: DateFilterInputProps): ReactElement {
   const [startDate, setStartDate] = useState<Moment | null>();
   const [endDate, setEndDate] = useState<Moment | null>();
 
-  const handleClickOutside = () => {
+  useEffect(() => {
     if (startDate && endDate) {
       props.onChange(startDate, endDate);
     }
-  };
+  }, [startDate, endDate]);
 
   return (
     <EuiDatePickerRange
@@ -23,11 +25,10 @@ function DateFilterInput(props: DateFilterInputProps): ReactElement {
           selected={startDate}
           startDate={startDate}
           endDate={endDate}
-          maxDate={endDate || undefined}
+          maxDate={endDate ? moment.min(endDate, today) : today}
           onChange={setStartDate}
-          onClickOutside={handleClickOutside}
           placeholder="Start Date"
-          showTimeSelect
+          adjustDateOnChange={false}
         />
       }
       endDateControl={
@@ -36,10 +37,10 @@ function DateFilterInput(props: DateFilterInputProps): ReactElement {
           startDate={startDate}
           endDate={endDate}
           minDate={startDate || undefined}
+          maxDate={today}
           onChange={setEndDate}
-          onClickOutside={handleClickOutside}
           placeholder="End Date"
-          showTimeSelect
+          adjustDateOnChange={false}
         />
       }
       fullWidth
