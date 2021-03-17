@@ -1,4 +1,12 @@
-import { EuiPage, EuiPageBody, EuiPageContent, EuiPageContentBody, EuiPageHeader, EuiSpacer } from "@elastic/eui";
+import {
+  EuiButtonIcon,
+  EuiPage,
+  EuiPageBody,
+  EuiPageContent,
+  EuiPageContentBody,
+  EuiPageHeader,
+  EuiSpacer,
+} from "@elastic/eui";
 import { Moment } from "moment";
 import React, { ReactElement, useState } from "react";
 import { Country, SearchQuery } from "../types";
@@ -16,6 +24,16 @@ function App(): ReactElement {
     setSearchQuery((searchQuery) => ({ ...searchQuery, startDate, endDate }));
   };
 
+  const linkButton = (
+    <EuiButtonIcon
+      href="https://github.com/hckhanh/covid-table"
+      iconType="logoGithub"
+      iconSize="xl"
+      target="_blank"
+      color="text"
+    />
+  );
+
   return (
     <div>
       <EuiPage paddingSize="none">
@@ -24,7 +42,7 @@ function App(): ReactElement {
             restrictWidth
             iconType="searchProfilerApp"
             pageTitle="Covid Table"
-            // rightSideItems={[button]}
+            rightSideItems={[linkButton]}
             paddingSize="l"
           />
           <EuiPageContent borderRadius="none" hasShadow={false} style={{ display: "flex" }}>
