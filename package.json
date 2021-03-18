@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "@elastic/datemath": "^5.0.3",
-    "@elastic/eui": "^31.10.0",
+    "@elastic/eui": "^31.11.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-query": "^3.12.2",
+    "react-query": "^3.12.3",
     "react-scripts": "4.0.3",
     "url-join": "^4.0.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/user-event": "^13.0.1",
     "@types/jest": "^26",
     "@types/node": "^14",
     "@types/react": "^17",

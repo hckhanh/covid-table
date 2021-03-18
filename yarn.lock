@@ -1622,9 +1622,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@elastic/eui@npm:^31.10.0":
-  version: 31.10.0
-  resolution: "@elastic/eui@npm:31.10.0"
+"@elastic/eui@npm:^31.11.0":
+  version: 31.11.0
+  resolution: "@elastic/eui@npm:31.11.0"
   dependencies:
     "@types/chroma-js": ^2.0.0
     "@types/lodash": ^4.14.160
@@ -1670,7 +1670,7 @@ __metadata:
     react: ^16.12
     react-dom: ^16.12
     typescript: ^4.0.5
-  checksum: 5ef43f815c79a0760ca8d232ee5c082e33f32e8a277bbf16bc5f0ac1878df47fc6cc031b2cd2b64d8a0acf47f11283b23b2ecdc35426d67a4771553138acf5ec
+  checksum: b09b3770ea141ac610a5df88001003024f45ab76a70189d3c7152171d60f7aa1bc3a4cb73b63c6820e188789800db488b73bdd8dca149f28f305aadaf7984b75
   languageName: node
   linkType: hard
 
@@ -2292,14 +2292,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:^12.8.3":
-  version: 12.8.3
-  resolution: "@testing-library/user-event@npm:12.8.3"
+"@testing-library/user-event@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "@testing-library/user-event@npm:13.0.1"
   dependencies:
     "@babel/runtime": ^7.12.5
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
-  checksum: de7ec0222bc30f5b967c03298563c9c1fe2dc94e3d1ad94607df90f660f68d9c9686c25f59be4f049ab3cccc80080d6056b32d6851666afe3fbc35d9c384fb20
+  checksum: 48c061d4a218ad6e6dcbc4f366134f76bee83267110b02118a4629d37c5176782de47adb9f9d272589233a54e77c232b6bfb59a498a33de62803c2bb551e475d
   languageName: node
   linkType: hard
 
@@ -5172,10 +5172,10 @@ __metadata:
   resolution: "covid-table@workspace:."
   dependencies:
     "@elastic/datemath": ^5.0.3
-    "@elastic/eui": ^31.10.0
+    "@elastic/eui": ^31.11.0
     "@testing-library/jest-dom": ^5.11.9
     "@testing-library/react": ^11.2.5
-    "@testing-library/user-event": ^12.8.3
+    "@testing-library/user-event": ^13.0.1
     "@types/jest": ^26
     "@types/node": ^14
     "@types/react": ^17
@@ -5189,11 +5189,11 @@ __metadata:
     prettier: 2.2.1
     react: ^17.0.1
     react-dom: ^17.0.1
-    react-query: ^3.12.2
+    react-query: ^3.12.3
     react-scripts: 4.0.3
     typescript: ^4.2.3
     url-join: ^4.0.1
-    web-vitals: ^1.0.1
+    web-vitals: ^1.1.1
   languageName: unknown
   linkType: soft
 
@@ -12994,9 +12994,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-query@npm:^3.12.2":
-  version: 3.12.2
-  resolution: "react-query@npm:3.12.2"
+"react-query@npm:^3.12.3":
+  version: 3.12.3
+  resolution: "react-query@npm:3.12.3"
   dependencies:
     "@babel/runtime": ^7.5.5
     broadcast-channel: ^3.4.1
@@ -13008,7 +13008,7 @@ fsevents@^1.2.7:
       optional: true
     react-native:
       optional: true
-  checksum: 00ce80a1270a0f125aafd781080ea77b03288a1fefaf2ecaa8b1d9ec13977d039d2d5f1e3838850268cfcc97a3dbe48d1b70f46ab88dbc188bfa1722874e8be8
+  checksum: 55ba13492acd70e400c8c5a13c433ea8d7556e830104ecee23c3e5e899c3698ff48fcdaf4e2e23437b07e60b30161857324b8fba170dbaa976ed95e5cb068893
   languageName: node
   linkType: hard
 
@@ -16139,7 +16139,7 @@ typescript@^4.2.3:
   languageName: node
   linkType: hard
 
-"web-vitals@npm:^1.0.1":
+"web-vitals@npm:^1.1.1":
   version: 1.1.1
   resolution: "web-vitals@npm:1.1.1"
   checksum: e84e449f46d5bdae9bc3d9d03647e654970bbe7fd448ecc8051ae06bcb869aa29cdcd16486786db416ca7a6e43a2f87e0f66662437ec5679761bcdd753a8c055
